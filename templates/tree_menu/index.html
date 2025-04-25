@@ -1,0 +1,18 @@
+{% load menu_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        li.active a {color:red}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Site</title>
+</head>
+<body>
+    <h1>Демонстрация древовидного меню</h1>
+    {% draw_menu 'main_menu' %}
+    {% draw_menu 'alfafit' %}
+</body>
+</html>

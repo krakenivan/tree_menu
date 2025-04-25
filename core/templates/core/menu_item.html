@@ -1,0 +1,14 @@
+{% if item.should_display %}
+<li class="menu-item {% if item.is_active %}active{% endif %}">
+    <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+    {% if item.child and item.is_expanded %}
+        <ul class="submenu">
+            {% for c in item.child %}
+                {% with item=c %}
+                    {% include "core/menu_item.html" %}
+                {% endwith %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
+{% endif %}
