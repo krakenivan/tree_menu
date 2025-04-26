@@ -24,5 +24,7 @@ class MenuItem(models.Model):
         return self.name
 
     def get_absolute_url(self):
+        if self.url:
+            return self.url
         return reverse("menu", args=(self.named_url,))
 
